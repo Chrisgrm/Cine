@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/usuario/UsuarioDAOPgSQL.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/vistas/VistaPrincipal.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/templates/PanelWithBackground.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/usuario/UsuarioDTO.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/vistas/PanelUsuario.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/cine/Launcher.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/constantes/Constantes.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/modelo/Modelo.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/pelicula/PeliculaDTO.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/pelicula/PeliculaDAO.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/controlador/Controlador.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/usuario/UsuarioDAO.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/pelicula/PeliculaDAOPgSQL.java</file>
+        </group>
+    </open-files>
+</project-private>
