@@ -27,7 +27,7 @@ public class PanelUsuario extends JPanel{
     private JLabel imagen;
     private PeliculaDTO pelicula;
     private TemplateButton btnRegistrar;
-    private TemplateButton btnIngresar;
+
    
     
     PanelUsuario (){
@@ -38,7 +38,7 @@ public class PanelUsuario extends JPanel{
         descripcion = new JLabel();
         imagen = new JLabel(); 
         pelicula = new PeliculaDTO();
-        btnIngresar = new TemplateButton();
+
         btnRegistrar = new TemplateButton();
      
     }
@@ -70,9 +70,8 @@ public class PanelUsuario extends JPanel{
     public TemplateButton getBtnRegristrar(){
         return btnRegistrar;
     }
-     public TemplateButton getBtnIngresar(){
-        return btnIngresar;
-    }
+  
+   
     
     public void setProperties() {     
         setLayout(null);
@@ -86,7 +85,7 @@ public class PanelUsuario extends JPanel{
         setImagenProperties();
         setiTituloProperties();
         setBtnRegistrarProperties();
-        setBtnIngresarProperties();
+;
     }
     private void addComponents() {
         add(btnAtras);
@@ -95,7 +94,6 @@ public class PanelUsuario extends JPanel{
         add(imagen);
         add(descripcion);
         add(tituloPelicula);  
-        add(btnIngresar);
         add(btnRegistrar);
     }
 
@@ -141,32 +139,21 @@ public class PanelUsuario extends JPanel{
         btnSiguiente.addActionListener(listener);
         btnAtras.addActionListener(listener);
         btnCompra.addActionListener(listener);
-        btnIngresar.addActionListener(listener);
         btnRegistrar.addActionListener(listener);
         
     }
     public void init() {    
         setProperties();
         setComponentsProperties();
-        addComponents();
-          
+        addComponents();          
     }
 
     private void setBtnRegistrarProperties() {
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.setBounds(680, 20, 140, 40);
+        btnRegistrar.setText("Ingresar / Registrar");
+        btnRegistrar.setBounds(540, 20, 280, 40);
     }
 
-    private void setBtnIngresarProperties() {
-        btnIngresar.setText("Ingresar");
-        btnIngresar.setBounds(530, 20, 140, 40);
-    }
 
-    private void cambiarEstado(boolean estado) {
-        for (Component component : this.getComponents()) {
-            component.setVisible(estado);
-        }   
-    }
-    
+
     
 }

@@ -15,7 +15,14 @@ public class UsuarioDTO {
     private String apellido;
     private String correo;
     private String contraseña;
-
+    private int tarjeta;
+    
+    public int getTarjeta(){
+        return tarjeta;
+    }
+    public void setTarjeta(int tarjeta){
+        this.tarjeta=tarjeta;
+    }
     public int getId() {
         return id;
     }

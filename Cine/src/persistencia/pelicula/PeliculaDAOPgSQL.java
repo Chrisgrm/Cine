@@ -22,9 +22,10 @@ public class PeliculaDAOPgSQL implements PeliculaDAO{
             statement.setString(2, pelicula.getClasificacion());
             statement.setDate(3, (Date) pelicula.getFechasEstreno());
             statement.setString(4, pelicula.getSinopsis());
-            statement.setString(4, pelicula.getGenero());
-            statement.setInt(4, pelicula.getDuracion());
-            statement.setString(4, pelicula.getProtagonista());
+            statement.setString(5, pelicula.getGenero());
+            statement.setInt(6, pelicula.getDuracion());
+            statement.setString(7, pelicula.getProtagonista());
+            statement.executeUpdate();    
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,6 +51,25 @@ public class PeliculaDAOPgSQL implements PeliculaDAO{
             e.printStackTrace();
         }
         return pelicula;
+    }
+    
+    public int cantidadPeliculas(){
+        int count = 0;
+        try (Connection connection = DriverManager.getConnection(Constantes.URL, Constantes.USER, Constantes.PASSWORD)) {
+            PreparedStatement statement = connection.prepareStatement("SELECT COUNT (*) FROM pelicula");
+            
+            ResultSet rs = statement.executeQuery();
+             while(rs.next()){
+                count = rs.getInt("count");
+            }
+         
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return count;
+        
+        
     }
         
     

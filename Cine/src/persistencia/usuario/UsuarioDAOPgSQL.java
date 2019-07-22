@@ -15,14 +15,17 @@ import persistencia.constantes.Constantes;
 public class UsuarioDAOPgSQL implements UsuarioDAO{
 
     @Override
-    public void Crear(UsuarioDTO usuario) {
+    public void crear(UsuarioDTO usuario) {
         try {Connection conection = DriverManager.getConnection(Constantes.URL, Constantes.USER , Constantes.PASSWORD);
-            PreparedStatement statement = conection.prepareStatement("INSERT INTO usuario values (?,?,?,?)");
-            statement.setString(1, usuario.getNombre());
-            statement.setString(2, usuario.getApellido());
-            statement.setString(3, usuario.getCorreo());
-            statement.setString(4, usuario.getContraseña());
-        } catch (Exception e) {
+            PreparedStatement statement = conection.prepareStatement("INSERT INTO usuario values (?,?,?,?,?,?)");
+            statement.setInt(1, usuario.getId());
+            statement.setString(2, usuario.getNombre());
+            statement.setString(3, usuario.getApellido());
+            statement.setString(4, usuario.getCorreo());
+            statement.setString(5, usuario.getContraseña());
+            statement.setInt(6, usuario.getTarjeta());  
+            statement.executeUpdate();            
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -40,6 +43,26 @@ public class UsuarioDAOPgSQL implements UsuarioDAO{
                         usuario.setApellido(rs.getString("apellido"));
                         usuario.setCorreo(rs.getString("correo"));
                         usuario.setContraseña(rs.getString("contraseña"));
+                        usuario.setTarjeta(rs.getInt("no_tarjeta"));
+                    }
+		} catch (SQLException e) {
+                    e.printStackTrace();
+		} 
+		return usuario;   
+    }
+        public UsuarioDTO consultar(String correo) {
+        UsuarioDTO usuario = new UsuarioDTO();
+		try (Connection conection = DriverManager.getConnection(Constantes.URL, Constantes.USER , Constantes.PASSWORD)){
+                    PreparedStatement statement = conection.prepareStatement("SELECT* FROM usuario WHERE correo = ?");
+                    statement.setString(1, correo);	
+                    ResultSet rs = statement.executeQuery();
+                    if (rs.next()) {
+                        usuario.setId(rs.getInt("id_usuario"));
+                        usuario.setNombre(rs.getString("nombre"));
+                        usuario.setApellido(rs.getString("apellido"));
+                        usuario.setCorreo(rs.getString("correo"));
+                        usuario.setContraseña(rs.getString("contraseña"));
+                        usuario.setTarjeta(rs.getInt("no_tarjeta"));
                     }
 		} catch (SQLException e) {
                     e.printStackTrace();

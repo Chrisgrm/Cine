@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package persistencia.pelicula;
+package persistencia.boleta;
 
-import persistencia.usuario.UsuarioDTO;
+
 
 /**
  *
  * @author chris
  */
-public interface PeliculaDAO {
-    void Crear(PeliculaDTO pelicula);    
-    PeliculaDTO consultar(int id);
-    void actualizar (PeliculaDTO pelicula);
+public interface BoletaDAO {
+    void crear(BoletaDTO boleta);    
+    BoletaDTO consultar(int id);
+    void actualizar (BoletaDTO boleta);
     void eliminar(String id);   
-    int cantidadPeliculas();
+
+    
 }

@@ -16,16 +16,21 @@ import presentacion.templates.PanelWithBackground;
 public class PanelPrincipal extends PanelWithBackground {
     private PanelRegistrar panelRegistar;
     private PanelUsuario panelUsuario;
+    private PanelCompra panelCompra;
     
     public PanelPrincipal(){
         panelRegistar = new PanelRegistrar();
         panelUsuario = new PanelUsuario();
+        panelCompra = new PanelCompra();
     }
     public PanelUsuario getPanelUsuario(){
         return panelUsuario;
     }
     public PanelRegistrar getPanelRegistrar(){
         return panelRegistar;
+    }
+    public PanelCompra getPanelCompra(){
+        return panelCompra;
     }
     
     public void setProperties(){
@@ -34,21 +39,22 @@ public class PanelPrincipal extends PanelWithBackground {
     public void addComponents(){
         add(panelRegistar);
         add(panelUsuario);
+        add(panelCompra);
     }
     
     public void init(){
         panelRegistar.init();
         panelUsuario.init();
+        panelCompra.init();
         setProperties();
         addComponents();
         setBackground("src/recursos/imagenes/jugadores.jpg");
     }
-    public void activarPanelRegistrar(){
-        panelRegistar.cambiarEstado(true);
-    }
+
     public void addController (ActionListener listener){
         panelRegistar.addController(listener);
-        panelUsuario.addController(listener);               
+        panelUsuario.addController(listener);
+        panelCompra.addController(listener);
     }
 
 

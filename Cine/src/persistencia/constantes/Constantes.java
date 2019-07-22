@@ -6,5 +6,5 @@ public class Constantes {
 
     public static final String URL = "jdbc:postgresql://localhost/cine";
     public static final String USER = "postgres";
-    public static final String PASSWORD = "contraseña";
+    public static final String PASSWORD = "5376052";
 }
