@@ -7,7 +7,9 @@ package presentacion.controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Time;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.logging.Level;
@@ -15,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import persistencia.boleta.BoletaDTO;
 import persistencia.pelicula.PeliculaDTO;
+import persistencia.tarjeta.TarjetaDTO;
 import persistencia.usuario.UsuarioDTO;
 import presentacion.modelo.Modelo;
 import presentacion.vistas.PanelCompra;
@@ -38,15 +41,18 @@ public class Controlador implements ActionListener{
     private int id_pelicula;
     private Random rand;
     private int n;
+    private int tarjeta;
     
     
     public Controlador(){
         modelo = new Modelo();
         siguiente = 2;
         anterior=modelo.getCantidadPeliculas();
-        sesionActiva= 1;
+        sesionActiva= 0;
         id_pelicula = 1;
         rand = new Random();
+        UsuarioDTO usuario = modelo.sesionExiste(sesionActiva);
+        tarjeta = usuario.getTarjeta();
         
     }
     public int random (){
@@ -167,24 +173,15 @@ public class Controlador implements ActionListener{
             panelCompra.limpiar();
         }
         if (e.getSource() == panelCompra.getBtnComprar()){
-            int sala = 0;
-            panelCompra.limpiar();
+            int sala = 0;            
             if (String.valueOf(panelCompra.getSelectHora().getSelectedItem()).equalsIgnoreCase("14:00")){                
-                sala = 1;
-                try {
-                    crearBoleta(sala);
-                } catch (ParseException ex) {
-                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                sala = 1; 
+                crearBoleta(sala);
                 JOptionPane.showMessageDialog(panelCompra, "Compra realizada, su sala es la numero 1");
             }else{
-                sala =2;
+                sala =2;  
+                crearBoleta(sala);
                 JOptionPane.showMessageDialog(panelCompra, "Compra realizada, su sala es la numero 2");
-                try {
-                    crearBoleta(sala);
-                } catch (ParseException ex) {
-                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-                }
    
             } 
             panelCompra.setVisible(false);
@@ -204,20 +201,18 @@ public class Controlador implements ActionListener{
         modelo.crearUsuario(usuario);
     }
 
-    private void crearBoleta(int sala) throws ParseException {
-      
-
-    
- 
+    private void crearBoleta(int sala) {
         BoletaDTO boleta = new BoletaDTO();
-        boleta.setNo_referencia(getN());
-        System.out.println(getN());
+        
+        boleta.setNo_referencia(getN());      
         boleta.setPelicula(panelCompra.getLblPelicula().getText());
-        boleta.setHora((Date) panelCompra.getSelectHora().getSelectedItem());
+        boleta.setHora(String.valueOf(panelCompra.getSelectHora().getSelectedItem()));
         boleta.setSala(sala);
         boleta.setId_pelicula(id_pelicula);
-        boleta.setFila((char)panelCompra.getSelectFila().getSelectedItem());
-        boleta.setAsiento( (int) panelCompra.getSelectAsiento().getSelectedItem());
+        boleta.setFila(String.valueOf(panelCompra.getSelectFila().getSelectedItem()));
+        boleta.setAsiento( Integer.parseInt((String) panelCompra.getSelectAsiento().getSelectedItem()) );
+        boleta.setNTarjeta(tarjeta);
+        
         modelo.crearBoleta(boleta);
     }
 

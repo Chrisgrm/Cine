@@ -48,7 +48,7 @@ public class PanelPrincipal extends PanelWithBackground {
         panelCompra.init();
         setProperties();
         addComponents();
-        setBackground("src/recursos/imagenes/jugadores.jpg");
+        setBackground("src/recursos/imagenes/fondo.jpg");
     }
 
     public void addController (ActionListener listener){

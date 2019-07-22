@@ -15,7 +15,7 @@ import persistencia.constantes.Constantes;
 public class PeliculaDAOPgSQL implements PeliculaDAO{
 
     @Override
-     public void Crear(PeliculaDTO pelicula) {
+     public void crear(PeliculaDTO pelicula) {
         try {Connection conection = DriverManager.getConnection(Constantes.URL, Constantes.USER , Constantes.PASSWORD);
             PreparedStatement statement = conection.prepareStatement("INSERT INTO pelicula values (?,?,?,?,?,?,?)");
             statement.setString(1, pelicula.getTitulo());

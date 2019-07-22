@@ -119,7 +119,7 @@ public class PanelCompra extends JPanel{
         add(lblPelicula);
         add(lblFila);
         add(lblAsiento);
-        add(lblSala);
+//        add(lblSala);
         add(lblHora);
         add(selectFila);
         add(selectAsiento);

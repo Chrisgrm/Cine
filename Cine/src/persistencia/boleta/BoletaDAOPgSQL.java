@@ -18,14 +18,15 @@ public class BoletaDAOPgSQL  implements BoletaDAO{
     @Override
      public void crear(BoletaDTO boleta) {
         try {Connection conection = DriverManager.getConnection(Constantes.URL, Constantes.USER , Constantes.PASSWORD);
-            PreparedStatement statement = conection.prepareStatement("INSERT INTO pelicula values (?,?,?,?,?,?,?)");
+            PreparedStatement statement = conection.prepareStatement("INSERT INTO boleta values (?,?,?,?,?,?,?,?)");
             statement.setInt(1, boleta.getNo_referencia());
-            statement.setString(2, boleta.getPelicula());
-            statement.setDate(3, (Date) boleta.getHora());
-            statement.setInt(4, boleta.getSala());
-            statement.setInt(5, boleta.getId_pelicula());
-            statement.setString(6, String.valueOf(boleta.getFila()));
-            statement.setInt(7, boleta.getAsiento());
+            statement.setString(2, boleta.getPelicula());            
+            statement.setInt(3, boleta.getSala());
+            statement.setString(8, boleta.getHora());
+            statement.setInt(4, boleta.getId_pelicula());
+            statement.setString(5, String.valueOf(boleta.getFila()));
+            statement.setInt(6, boleta.getAsiento());
+            statement.setInt(7, boleta.getNTarjeta());
             statement.executeUpdate();    
         } catch (SQLException e) {
             e.printStackTrace();

@@ -5,17 +5,25 @@
         <group>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/usuario/UsuarioDAOPgSQL.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/vistas/VistaPrincipal.java</file>
-            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/templates/PanelWithBackground.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/tarjeta/TarjetaDAOPgSQL.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/tarjeta/TarjetaDAO.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/usuario/UsuarioDTO.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/vistas/PanelUsuario.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/cine/Launcher.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/constantes/Constantes.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/boleta/BoletaDTO.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/modelo/Modelo.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/pelicula/PeliculaDTO.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/vistas/PanelRegistrar.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/vistas/PanelPrincipal.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/pelicula/PeliculaDAO.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/tarjeta/TarjetaDTO.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/controlador/Controlador.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/boleta/BoletaDAOPgSQL.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/usuario/UsuarioDAO.java</file>
             <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/persistencia/pelicula/PeliculaDAOPgSQL.java</file>
+            <file>file:/C:/Users/chris/Documents/NetBeansProjects/Cine/src/presentacion/vistas/PanelCompra.java</file>
         </group>
     </open-files>
 </project-private>

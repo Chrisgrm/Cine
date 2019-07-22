@@ -12,7 +12,7 @@ import persistencia.usuario.UsuarioDTO;
  * @author chris
  */
 public interface PeliculaDAO {
-    void Crear(PeliculaDTO pelicula);    
+    void crear(PeliculaDTO pelicula);    
     PeliculaDTO consultar(int id);
     void actualizar (PeliculaDTO pelicula);
     void eliminar(String id);   

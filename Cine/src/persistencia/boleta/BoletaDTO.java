@@ -17,11 +17,19 @@ import java.util.Date;
 public class BoletaDTO {
     private int no_referencia;
     private String pelicula;
-    private Date hora;
+    private String hora;
     private int sala;
     private int id_pelicula;
-    private char fila;
+    private String fila;
     private int asiento;
+    private int nTarjeta;
+    public int getNTarjeta() {
+        return nTarjeta;
+    }
+
+    public void setNTarjeta(int nTarjeta) {
+        this.nTarjeta = nTarjeta;
+    }
 
     public int getNo_referencia() {
         return no_referencia;
@@ -39,11 +47,11 @@ public class BoletaDTO {
         this.pelicula = pelicula;
     }
 
-    public Date getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
@@ -63,11 +71,11 @@ public class BoletaDTO {
         this.id_pelicula = id_pelicula;
     }
 
-    public char getFila() {
+    public String getFila() {
         return fila;
     }
 
-    public void setFila(char fila) {
+    public void setFila(String fila) {
         this.fila = fila;
     }
 
